@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const bcrypt = require('bcryptjs');
-const jwt = require
+const jwt = require ('jsonwebtoken');
 
 const Users = require('../users/users-model.js');
 
@@ -51,7 +51,7 @@ const options = {
   expiresIn: "1 hour",
 }
 
-  jwt.sign(payload, secret, options)
+ return jwt.sign(payload, secret, options);
 }
 
 module.exports = router;
